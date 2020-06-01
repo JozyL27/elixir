@@ -17,11 +17,18 @@ export default class Cards extends Component {
             <ul className='cardsContainer'>
                 {games.length > 0 && 
                 games.map(game => 
-                <li key={game.id} className='card'>
-                    <h3>{game.name}</h3>
+                <li key={game.id} className='card' style={{
+                    background: game.cover ? 
+                    `url(${game.cover.url.replace('thumb', 'cover_big')})` : 'black',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% auto',
+                    backgroundPosition: 'center',
+                }}>
+                    <h3 className='gameTitle'>{game.name}</h3>
                     {game.cover ? 
-                    <img src={game.cover.url} alt='game' /> 
-                    : <p>no cover art available</p>}
+                    null 
+                    : <p className='unavailable'>
+                        no cover art available</p>}
                 </li>)}
             </ul>
         )
