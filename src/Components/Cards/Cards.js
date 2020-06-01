@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import API from '../../api'
 
 export default class Cards extends Component {
-    componentDidMount() {
+   state = {games: [], genres: []}
+
+    async componentDidMount() {
+        const res = await API.get('/app-load')
+        this.setState({ games: res.data.gameData, 
+            genres: res.data.genreData })
     }
 
     render() {
+        console.log(this.state)
+        const {games} = this.state
         return (
-            <div className='cardsContainer'>
-            </div>
+            <ul className='cardsContainer'>
+                {games.length > 0 && 
+                games.map(game => 
+                <li key={game.id} className='card'>
+                    <h3>{game.name}</h3>
+                    {game.cover ? 
+                    <img src={game.cover.url} alt='game' /> 
+                    : <p>no cover art available</p>}
+                </li>)}
+            </ul>
         )
     }
 }
