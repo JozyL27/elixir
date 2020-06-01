@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import API from '../../api'
+import API from '../../api';
+import './Cards.css'
 
 export default class Cards extends Component {
    state = {games: [], genres: []}
@@ -11,7 +12,6 @@ export default class Cards extends Component {
     }
 
     render() {
-        console.log(this.state)
         const {games} = this.state
         return (
             <ul className='cardsContainer'>
