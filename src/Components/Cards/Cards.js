@@ -21,7 +21,7 @@ export default class Cards extends Component {
                     background: game.cover ? 
                     `url(${game.cover.url.replace('thumb', 'cover_big')})` : 'black',
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: '100% auto',
+                    backgroundSize: 'auto 100%',
                     backgroundPosition: 'center',
                 }}>
                     <h3 className='gameTitle'>{game.name}</h3>
