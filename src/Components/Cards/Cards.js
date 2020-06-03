@@ -3,17 +3,18 @@ import API from '../../api';
 import './Cards.css'
 
 export default class Cards extends Component {
-   state = {games: [], genres: []}
+   state = {games: [], genres: [], error: null}
 
     async componentDidMount() {
+        this.setState({error: null})
         const res = await API.get('/app-load')
+        .catch(e => this.setState({ error: e.message }))
         this.setState({ games: res.data.gameData, 
             genres: res.data.genreData })
     }
 
     render() {
         const {games} = this.state
-        console.log(games)
         return (
             <ul className='cardsContainer'>
                 {games.length > 0 && 
