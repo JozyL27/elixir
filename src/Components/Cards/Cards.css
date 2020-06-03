@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     overflow-y: auto;
     max-height: 700px;
+    margin-bottom: 50px;
 }
 
 .card {
