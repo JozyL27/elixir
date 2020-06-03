@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import API from '../../api';
-import './Cards.css'
+import UserContext from '../../Context/UserContext';
+import './Cards.css';
 
 export default class Cards extends Component {
-   state = {games: [], genres: [], error: null}
+   static contextType = UserContext
 
     async componentDidMount() {
-        this.setState({error: null})
+        this.context.clearError()
         const res = await API.get('/app-load')
-        .catch(e => this.setState({ error: e.message }))
-        this.setState({ games: res.data.gameData, 
-            genres: res.data.genreData })
+        .catch(e => this.context.setError(e.message))
+        this.context.setGames(res.data.gameData)
+        this.context.setGenres(res.data.genreData)
     }
 
     render() {
-        const {games} = this.state
+        const games = this.context.games || []
         return (
             <ul className='cardsContainer'>
                 {games.length > 0 && 
