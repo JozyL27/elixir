@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage'
+import Header from './Components/Header/Header'
 import './App.css';
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Switch>
           <Route
           exact

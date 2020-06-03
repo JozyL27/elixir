@@ -13,6 +13,7 @@ export default class Cards extends Component {
 
     render() {
         const {games} = this.state
+        console.log(games)
         return (
             <ul className='cardsContainer'>
                 {games.length > 0 && 
@@ -24,7 +25,10 @@ export default class Cards extends Component {
                     backgroundSize: '100% auto',
                     backgroundPosition: 'center',
                 }}>
-                    {/* <h3 className='gameTitle'>{game.name}</h3> */}
+                    <div className='cardOverlay'>
+                        <h3 className='gameTitle'>{game.name}</h3>
+                        <p className='gameSummary'>{game.summary}</p>
+                    </div>
                     {game.cover ? 
                     null 
                     : <p className='unavailable'>
