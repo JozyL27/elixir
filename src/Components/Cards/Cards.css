@@ -3,7 +3,7 @@
     justify-content: space-around;
     /* align-items: center; */
     flex-wrap: wrap;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .card {
@@ -12,9 +12,10 @@
     align-items: center;
     padding: 10px;
     margin: 10px auto 10px auto;
-    border: 1px solid lightgrey;
-    height: 12rem;
+    border: 1px solid black;
+    height: 20rem;
     width: 15rem;
+    border-radius: 8px;
 }
 
 .gameCover {

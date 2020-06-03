@@ -24,7 +24,7 @@ export default class Cards extends Component {
                     backgroundSize: '100% auto',
                     backgroundPosition: 'center',
                 }}>
-                    <h3 className='gameTitle'>{game.name}</h3>
+                    {/* <h3 className='gameTitle'>{game.name}</h3> */}
                     {game.cover ? 
                     null 
                     : <p className='unavailable'>

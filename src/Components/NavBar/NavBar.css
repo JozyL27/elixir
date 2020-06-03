@@ -1,0 +1,18 @@
+.leftNavContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin: 10px 50px 0px 50px ;
+}
+
+.leftNavContainer > li {
+    margin-bottom: 20px;
+}
+
+.leftNavContainer > li > button {
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 8px;
+    cursor: pointer;
+}
