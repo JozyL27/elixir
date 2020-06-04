@@ -18,10 +18,12 @@ export default class Cards extends Component {
                     backgroundSize: '100% auto',
                     backgroundPosition: 'center',
                 }}>
+                    <a href={`/game/${game.id}`}>
                     <div className='cardOverlay'>
                         <h3 className='gameTitle'>{game.name}</h3>
                         <p className='gameSummary'>{game.summary}</p>
                     </div>
+                    </a>
                     {game.cover ? 
                     null 
                     : <p className='unavailable'>

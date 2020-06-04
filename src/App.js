@@ -5,6 +5,7 @@ import Header from './Components/Header/Header'
 import './App.css';
 import API from './api';
 import UserContext from './Context/UserContext';
+import Card from './Components/Card/Card';
 
 class App extends React.Component {
   static contextType = UserContext
@@ -27,6 +28,9 @@ class App extends React.Component {
           path='/'
           component={LandingPage}
           />
+          <Route
+          path='/game/:gameId'
+          component={Card} />
         </Switch>
       </div>
     )
