@@ -1,9 +1,8 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import Cards from '../Cards/Cards';
-// import {Link} from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
-import './LandingPage.css'
+import './LandingPage.css';
 
 export default function LandingPage() {
     return (
