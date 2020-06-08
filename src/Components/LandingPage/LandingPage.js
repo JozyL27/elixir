@@ -9,12 +9,6 @@ export default function LandingPage() {
         <div className='landingContainer'>
         <div className='sectionOne'>
             <SearchBar />
-            <ul className='topNavContainer'>
-            <li><button>button 1</button></li>
-            <li><button> button 2</button></li>
-            <li><button>button 3</button></li>
-            <li><button> button 4</button></li>
-            </ul>
         </div>
             <div className='sectionTwo'>
                 <NavBar />
