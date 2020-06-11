@@ -1,19 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
+import './Header.css';
 
 export default function Header() {
     return (
-        <>
-        <Link to='/' className='headerLink'>
-            <h1 className='header' 
-            style={{color: 'white', 
-            textAlign: 'center', 
-            marginTop: '30px', 
-            fontSize: '40px'}}
-            >Elixir</h1>
-        </Link>
-        <SearchBar />
-        </>
+        <header>
+            <Link to='/' className='headerLink'>
+                <h1 className='headerText'>Elixir</h1>
+            </Link>
+            <SearchBar />
+        </header>
     )
 }
