@@ -1,25 +1,38 @@
-import React, { useContext } from 'react';
+import React, { Component } from 'react';
 import UserContext from '../../Context/UserContext';
 import './Card.css';
+export default class Card extends Component {
+    static contextType = UserContext
 
-export default function Card(props) {
-    const user = useContext(UserContext)
-    const {games, genres} = user
-    const game = games.find(el => el.id === Number(props.match.params.gameId)) || {}
-    console.log(game)
-    console.log(genres)
-    // const gameGenres = genres.map(el => game.genres.find())
-    // console.log(gameGenres)
-
-
-        return (
-            <section className='cardContainer'>
-                <h3 className='cardName'>{game.name}</h3>
-                {game.cover ? 
-                <img src={game.cover.url.replace('thumb', 'cover_big')} 
-                alt='cover art' />
-                : <p>no cover art available.</p>}
-                <p className='cardSummary'>Summary: {game.summary}</p>
-            </section>
-        )
+    cardClickHandler = (e) => {
+        //* Get ID from value attribute of clicked element
+        const gameId = parseInt(e.currentTarget.attributes.id.value);
+        //* Get parent card from
+        console.log(gameId);
+	}
+	
+	render() {
+		const game = this.props.game;
+		return (
+			<li key={game.id} id={game.id} className='card'
+                    onClick={this.cardClickHandler}
+                    style={{
+                        background: game.cover ? 
+                        `url(${game.cover.url.replace('thumb', 'cover_big')})` : 'black',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'auto 100%',
+                        backgroundPosition: 'center',
+                    }}  
+                >
+                    <div className='cardOverlay'>
+                        <h3 className='gameTitle'>{game.name}</h3>
+                        <p className='gameSummary'>{game.summary}</p>
+                    </div>
+                    {game.cover ? 
+                    null 
+                    : <p className='unavailable'>
+                        no cover art available</p>}
+                </li>
+		)
+	}
 }
