@@ -1,6 +1,5 @@
 .landingContainer {
     display: flex;
-    margin-top: 3rem;
     flex-direction: column;
 }
 

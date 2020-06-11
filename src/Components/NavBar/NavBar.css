@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     /* align-items: center; */
-    margin: 10px auto 0px auto ;
+    padding: 10px auto 0px auto ;
 }
 
 .leftNavContainer > li {
@@ -19,10 +19,14 @@
     cursor: pointer;
 }
 
+.leftNavContainer > li > button:hover {
+    background-color: #111;
+}
+
 @media screen and (min-width: 720px) {
     .leftNavContainer {
         flex-direction: column;
-        margin: 10px 50px 0px 50px;
+        padding: 10px 25px 0px 25px;
     }
 
     .leftNavContainer > li {
