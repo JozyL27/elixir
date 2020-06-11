@@ -8,7 +8,7 @@ export default function LandingPage() {
     return (
         <div className='landingContainer'>
         <div className='sectionOne'>
-            <SearchBar />
+            {/* <SearchBar /> */}
         </div>
             <div className='sectionTwo'>
                 <NavBar />
