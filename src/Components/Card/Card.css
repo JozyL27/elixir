@@ -1,3 +1,7 @@
+.cardContainer {
+    margin-top: 2rem;
+}
+
 .cardName {
     color: white;
 }

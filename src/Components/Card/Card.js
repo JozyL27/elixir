@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import UserContext from '../../Context/UserContext';
 import './Card.css';
+import {Link} from 'react-router-dom';
 
 export default function Card(props) {
     const user = useContext(UserContext)
@@ -14,6 +15,9 @@ export default function Card(props) {
 
         return (
             <section className='cardContainer'>
+                <Link to='/'>
+                <button>back</button>
+                </Link>
                 <h3 className='cardName'>{game.name}</h3>
                 {game.cover ? 
                 <img src={game.cover.url.replace('thumb', 'cover_big')} 
