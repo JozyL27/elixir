@@ -5,6 +5,10 @@ import './Cards.css';
 export default class Cards extends Component {
    static contextType = UserContext
 
+   cardClickHandler = (e) => {
+       console.log(e.currentTarget);
+   }
+
     render() {
         const games = this.context.games || []
         return (
@@ -18,12 +22,10 @@ export default class Cards extends Component {
                     backgroundSize: 'auto 100%',
                     backgroundPosition: 'center',
                 }}>
-                    <a href={`/game/${game.id}`}>
-                    <div className='cardOverlay'>
+                    <div className='cardOverlay' onClick={this.cardClickHandler} value={game.}>
                         <h3 className='gameTitle'>{game.name}</h3>
                         <p className='gameSummary'>{game.summary}</p>
                     </div>
-                    </a>
                     {game.cover ? 
                     null 
                     : <p className='unavailable'>
