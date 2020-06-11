@@ -1,7 +1,7 @@
 .searchBar {
     display: flex;
-    align-items: center;
-    margin: 10px 20px 0px 0px;
+    justify-content: flex-end;
+    margin: 10px 0px;
 }
 
 .searchBar > input {
@@ -16,7 +16,6 @@
 }
 
 .searchBar > button {
-    margin-right: 20px;
     padding: 2px;
     border-radius: 4px;
     color: black;
