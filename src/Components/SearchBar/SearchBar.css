@@ -1,0 +1,30 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    margin: 10px 20px 0px 0px;
+}
+
+.searchBar > input {
+    margin-right: 5px;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-size: 13px;
+    background-color: black;
+    outline: none;
+    color: white;
+}
+
+.searchBar > button {
+    margin-right: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}

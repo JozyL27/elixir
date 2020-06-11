@@ -1,0 +1,31 @@
+.leftNavContainer {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    margin: 10px auto 0px auto ;
+}
+
+.leftNavContainer > li {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.leftNavContainer > li > button {
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 8px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
+    .leftNavContainer {
+        flex-direction: column;
+        margin: 10px 50px 0px 50px;
+    }
+
+    .leftNavContainer > li {
+        margin: 0 0 20px 0;
+    }
+}

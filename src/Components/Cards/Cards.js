@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import API from '../../api';
-import './Cards.css'
+import UserContext from '../../Context/UserContext';
+import './Cards.css';
 
 export default class Cards extends Component {
-   state = {games: [], genres: []}
-
-    async componentDidMount() {
-        const res = await API.get('/app-load')
-        this.setState({ games: res.data.gameData, 
-            genres: res.data.genreData })
-    }
+   static contextType = UserContext
 
     render() {
-        const {games} = this.state
+        const games = this.context.games || []
         return (
             <ul className='cardsContainer'>
                 {games.length > 0 && 
@@ -24,7 +18,12 @@ export default class Cards extends Component {
                     backgroundSize: 'auto 100%',
                     backgroundPosition: 'center',
                 }}>
-                    <h3 className='gameTitle'>{game.name}</h3>
+                    <a href={`/game/${game.id}`}>
+                    <div className='cardOverlay'>
+                        <h3 className='gameTitle'>{game.name}</h3>
+                        <p className='gameSummary'>{game.summary}</p>
+                    </div>
+                    </a>
                     {game.cover ? 
                     null 
                     : <p className='unavailable'>
