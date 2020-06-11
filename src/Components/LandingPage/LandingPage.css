@@ -1,6 +1,7 @@
 .sectionTwo {
     display: flex;
     margin-top: 3rem;
+    flex-direction: column;
 }
 
 .sectionOne {
@@ -24,4 +25,10 @@
     border-bottom: 1px solid white;
     padding: 8px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
+    .sectionTwo {
+        flex-direction: row;
+    }
 }
