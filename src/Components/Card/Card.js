@@ -39,7 +39,7 @@ export default class Card extends Component {
                         no cover art available</p>}
                     <div className='game-info'>
                         <h2>{game.name}</h2>
-                        <Link to={`/game/${game.id}`}>Go to Game Page</Link>
+                        <Link to={`/game/${game.id}`} className='Link gamePageLink'>Go to Game Page</Link>
                         <p>{game.summary}</p>
                     </div>
                 </li>
