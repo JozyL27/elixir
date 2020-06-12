@@ -21,13 +21,10 @@ export default class Card extends Component {
             active: false
         });
     };
-	
-	render() {
-        console.log(this.state.active);
-        const game = this.props.game;
-		return (
-            this.state.active ?
-            //* Active Card
+
+    generateActiveCard = (game) => {
+        console.log(game);
+        return (
             <>
                 <div className='background' onClick={this.activeClickHandler}>
                 </div>
@@ -39,10 +36,17 @@ export default class Card extends Component {
                     <img src={game.cover.url.replace('thumb', 'cover_big')} className='cover' alt={`${game.name} Cover Art`}/>
                     : <p className='unavailable'>
                         no cover art available</p>}
+                    <div className='game-info'>
+                        <h2>{game.name}</h2>
+                        <p>{game.summary}</p>
+                    </div>
                 </li>
             </>
-            :
-            //* Inactive Card
+        );
+    };
+
+    generateInactiveCard  = (game) => {
+        return (
             <li key={game.id} id={game.id} 
                 className='card'
                 onClick={this.cardClickHandler}
@@ -56,6 +60,16 @@ export default class Card extends Component {
                     <p className='gameSummary'>{game.summary}</p>
                 </div>
             </li>
+        );
+    };
+	
+	render() {
+        const game = this.props.game;
+		return (
+            this.state.active ?
+                this.generateActiveCard(game)
+                    :
+                this.generateInactiveCard(game)
 		);
 	};
 }

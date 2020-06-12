@@ -5,6 +5,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     overflow-y: auto;
-    height: calc(100vh - 78px);
+    height: calc(100vh - 147px);
     padding: 10px 0px 10px 10px;
 }
