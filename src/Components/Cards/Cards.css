@@ -6,5 +6,5 @@
     flex-wrap: wrap;
     overflow-y: auto;
     height: calc(100vh - 78px);
-    padding: 10px 0;
+    padding: 10px 0px 10px 10px;
 }
