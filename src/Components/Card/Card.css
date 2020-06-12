@@ -59,6 +59,7 @@
 }
 
 .cardOverlay {
+    bottom: 100%;
     background-color: #008CBA;
     overflow: hidden;
     width: 15rem;
@@ -71,6 +72,7 @@
 }
 
 .card:hover .cardOverlay {
+    bottom: 0;
     height: 20rem;
     position: absolute;
 }
