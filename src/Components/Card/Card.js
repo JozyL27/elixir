@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../../Context/UserContext';
 import './Card.css';
 export default class Card extends Component {
@@ -38,6 +39,7 @@ export default class Card extends Component {
                         no cover art available</p>}
                     <div className='game-info'>
                         <h2>{game.name}</h2>
+                        <Link to={`/game/${game.id}`}>Go to Game Page</Link>
                         <p>{game.summary}</p>
                     </div>
                 </li>
