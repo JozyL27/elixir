@@ -1,29 +1,77 @@
-import React, { useContext } from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../../Context/UserContext';
 import './Card.css';
-import {Link} from 'react-router-dom';
+export default class Card extends Component {
+    static contextType = UserContext
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false
+        };
+    }
 
-export default function Card(props) {
-    const user = useContext(UserContext)
-    const {games, genres} = user
-    const game = games.find(el => el.id === Number(props.match.params.gameId)) || {}
-    console.log(game)
-    console.log(genres)
-    // const gameGenres = genres.map(el => game.genres.find())
-    // console.log(gameGenres)
+    cardClickHandler = () => {
+        this.setState({
+            active: true
+        });
+    };
+    
+    activeClickHandler = () => {
+        this.setState({
+            active: false
+        });
+    };
 
-
+    generateActiveCard = (game) => {
+        console.log(game);
         return (
-            <section className='cardContainer'>
-                <Link to='/'>
-                <button>back</button>
-                </Link>
-                <h3 className='cardName'>{game.name}</h3>
+            <>
+                <div className='background' onClick={this.activeClickHandler}>
+                </div>
+                <li key={game.id} id={game.id} 
+                    className='active-card card'
+                    onClick={null}
+                >
+                    {game.cover ? 
+                    <img src={game.cover.url.replace('thumb', 'cover_big')} className='cover' alt={`${game.name} Cover Art`}/>
+                    : <p className='unavailable'>
+                        no cover art available</p>}
+                    <div className='game-info'>
+                        <h2>{game.name}</h2>
+                        <Link to={`/game/${game.id}`}>Go to Game Page</Link>
+                        <p>{game.summary}</p>
+                    </div>
+                </li>
+            </>
+        );
+    };
+
+    generateInactiveCard  = (game) => {
+        return (
+            <li key={game.id} id={game.id} 
+                className='card'
+                onClick={this.cardClickHandler}
+            >
                 {game.cover ? 
-                <img src={game.cover.url.replace('thumb', 'cover_big')} 
-                alt='cover art' />
-                : <p>no cover art available.</p>}
-                <p className='cardSummary'>Summary: {game.summary}</p>
-            </section>
-        )
+                <img src={game.cover.url.replace('thumb', 'cover_big')} className='cover' alt={`${game.name} Cover Art`}/>
+                : <p className='unavailable'>
+                    no cover art available</p>}
+                <div className='cardOverlay'>
+                    <h3 className='gameTitle'>{game.name}</h3>
+                    <p className='gameSummary'>{game.summary}</p>
+                </div>
+            </li>
+        );
+    };
+	
+	render() {
+        const game = this.props.game;
+		return (
+            this.state.active ?
+                this.generateActiveCard(game)
+                    :
+                this.generateInactiveCard(game)
+		);
+	};
 }

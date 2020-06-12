@@ -1,23 +1,26 @@
 .searchBar {
+	background-color: #050505;
     display: flex;
-    align-items: center;
-    margin: 10px 20px 0px 0px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px 0px;
 }
 
 .searchBar > input {
+    width: 100px;
     margin-right: 5px;
     border: none;
     border-bottom: 1px solid white;
     text-align: center;
-    font-size: 13px;
-    background-color: black;
+    font-size: 1rem;
+	background-color: #050505;
     outline: none;
     color: white;
 }
 
 .searchBar > button {
-    margin-right: 20px;
     padding: 2px;
+    height: 25px;
     border-radius: 4px;
     color: black;
     background-color: white;
@@ -25,6 +28,25 @@
 }
 
 ::placeholder {
-    color: white;
+    color: #bbb;
     opacity: 1;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 350px) {
+    .searchBar > input {
+        width: 130px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .searchBar > input {
+        width: 150px;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .searchBar > input {
+        width: 180px;
+    }
 }

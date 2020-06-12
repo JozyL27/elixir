@@ -6,12 +6,8 @@ import './LandingPage.css';
 export default function LandingPage() {
     return (
         <div className='landingContainer'>
-        <div className='sectionOne'>
-        </div>
-            <div className='sectionTwo'>
-                <NavBar />
-                <Cards />
-            </div>
+            <NavBar />
+            <Cards />
         </div>
     )
 }

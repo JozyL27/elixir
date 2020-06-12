@@ -1,0 +1,13 @@
+header {
+	background-color: #050505;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 25px 15px;
+}
+
+.headerText {
+	background-color: #050505;
+	color: whitesmoke;
+	text-align: center;
+	font-size: 40px;
+}

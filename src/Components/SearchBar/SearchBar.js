@@ -19,8 +19,9 @@ export default class SearchBar extends Component {
             <>
             <form onSubmit={this.handleSubmit} 
             className='searchBar'>
-                <label htmlFor='games'>search</label>
-                <input name='games' 
+                <label htmlFor='search'></label>
+                <input name='search' 
+                id='search'
                 ref={node => 
                 (this.inputNode = node)}
                 onChange={this.handleSubmit}

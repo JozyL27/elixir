@@ -1,13 +1,143 @@
-.cardContainer {
-    margin-top: 2rem;
+/* General card styling */
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 10px auto;
+    height: 20rem;
+    width: 15rem;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 0;
+    transition: .5s ease;
 }
 
-.cardName {
+/* Active card styling */
+.active-card {
+    background-color: #ddd;
+    height: calc(100vh - 167px);
+    width: 16rem;
+    padding: 1.5rem;
+    margin: auto;
+    overflow-y: auto;
+    position: fixed;
+    left: 0; bottom: 10px; right: 0;
+    z-index: 2;
+}
+
+.background {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 100%;
+    height: calc(100vh - 147px);
+    z-index: 1;
+}
+/* ##Game-Info Elements## */
+.game-info {
+    background-color: #ddd;
+    height: 100%;
+}
+
+.game-info > * {
+    background-color: #ddd;
+    color: #111;
+}
+
+.game-info > h2 {
+    text-align: center;
+    margin: .75rem;
+    font-size: 1.8rem;
+}
+
+/* Cover and unavailable text */
+.cover {
+    height: 20rem;
+    width: 15rem;
+    border-radius: 8px;
+    transition: .4s ease;
+}
+
+.unavailable {
     color: white;
 }
 
-.cardSummary {
+/* inactive card info */
+.gameTitle {
     color: white;
-    font-size: 15px;
-    line-height: 1.5;
+    max-width: 70%;
+    text-align: center;
+    background-color: #008CBA;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.gameSummary {
+    color: white;
+    text-align: center;
+    background-color: #008CBA;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    overflow-y: auto;
+    font-size: 1rem;
+}
+
+.cardOverlay {
+    bottom: 100%;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 15rem;
+    height: 0rem;
+    border-radius: 8px;
+    transition: .4s ease;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Transition */
+.card:hover .cardOverlay {
+    bottom: 0;
+    height: 20rem;
+    position: absolute;
+}
+
+@media screen and (min-width: 332px) {
+    .background {
+        height: calc(100vh - 131px);
+    }
+
+    .active-card {
+        height: calc(100vh - 151px);
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .active-card {
+        width: 24rem;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .background {
+        height: calc(100vh - 78px);
+    }
+
+    .active-card {
+        height: calc(100vh - 98px);
+    }
+}
+
+@media screen and (min-width: 930px) {
+    .active-card {
+        width: 30rem;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .active-card {
+        width: 40rem;
+    }
 }
