@@ -1,5 +1,7 @@
 .card {
     display: flex;
+    position: relative;
+    overflow-y: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -8,12 +10,14 @@
     width: 15rem;
     border-radius: 8px;
     cursor: pointer;
+    z-index: 0;
 }
 
 .active-card {
     margin: auto;
     position: fixed;
     top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 2;
 }
 
 .background {
@@ -23,11 +27,13 @@
     bottom: 0; right: 0;
     width: calc(100% - 102px);
     height: calc(100% - 78px);
+    z-index: 1;
 }
 
 .cover {
     height: 20rem;
     width: 15rem;
+    border-radius: 8px;
 }
 
 .gameTitle {
@@ -53,19 +59,18 @@
 }
 
 .cardOverlay {
-    bottom: 100%;
     background-color: #008CBA;
     overflow: hidden;
     width: 15rem;
-    height: 0;
+    height: 0rem;
     border-radius: 8px;
-    transition: .5s ease;
+    transition: .4s ease;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.card:hover .cardOverlay{
-    bottom: 0;
+.card:hover .cardOverlay {
     height: 20rem;
+    position: absolute;
 }

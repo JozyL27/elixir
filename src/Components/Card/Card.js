@@ -28,7 +28,9 @@ export default class Card extends Component {
 		return (
             this.state.active ?
             //* Active Card
-            <div className='background' onClick={this.activeClickHandler}>
+            <>
+                <div className='background' onClick={this.activeClickHandler}>
+                </div>
                 <li key={game.id} id={game.id} 
                     className='active-card card'
                     onClick={null}
@@ -37,12 +39,8 @@ export default class Card extends Component {
                     <img src={game.cover.url.replace('thumb', 'cover_big')} className='cover' alt={`${game.name} Cover Art`}/>
                     : <p className='unavailable'>
                         no cover art available</p>}
-                    <div className='cardOverlay'>
-                        <h3 className='gameTitle'>{game.name}</h3>
-                        <p className='gameSummary'>{game.summary}</p>
-                    </div>
                 </li>
-            </div>
+            </>
             :
             //* Inactive Card
             <li key={game.id} id={game.id} 

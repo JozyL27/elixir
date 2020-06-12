@@ -1,5 +1,5 @@
 .cardsContainer {
-    position: relative;
+    position: static;
     background-color: #1a1a1a;
     display: flex;
     justify-content: space-around;
