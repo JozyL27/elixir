@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../../Context/UserContext';
+import RatingCircle from '../RatingCircle/RatingCircle';
 import './Card.css';
 export default class Card extends Component {
     static contextType = UserContext
@@ -38,10 +39,15 @@ export default class Card extends Component {
                     : <p className='unavailable'>
                         no cover art available</p>}
                     <div className='game-info'>
-                        <h2>{game.name}</h2>
-                        <Link to={`/game/${game.id}`} className='Link gamePageLink'>Go to Game Page</Link>
-                        <p>{game.summary}</p>
+                        <section className='active-card-section name-and-link'>
+                            <h2>{game.name}</h2>
+                            <Link to={`/game/${game.id}`} className='Link gamePageLink'>Go to Game Page</Link>
+                        </section>
+                        <section className='active-card-section'>
+                            <RatingCircle game={game} />
+                        </section>
                     </div>
+                    <p className='active-card-summary'>{game.summary}</p>
                 </li>
             </>
         );

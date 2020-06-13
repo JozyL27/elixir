@@ -18,10 +18,12 @@
 .active-card {
     background-color: #ddd;
     height: calc(100vh - 167px);
+    justify-content: flex-start;
     width: 16rem;
     padding: 1.5rem;
     margin: auto;
     overflow-y: auto;
+    cursor: default;
     position: fixed;
     left: 0; bottom: 10px; right: 0;
     z-index: 2;
@@ -39,10 +41,12 @@
 /* ##Game-Info Elements## */
 .game-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     background-color: #ddd;
-    height: 100%;
+    height: 10rem;
 }
 
 .game-info > * {
@@ -50,10 +54,32 @@
     color: #111;
 }
 
-.game-info > h2 {
+.active-card-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.active-card-section > * {
+    background-color: #ddd;
+    color: #111;
+}
+
+.active-card-section > h2 {
     text-align: center;
-    margin: .75rem .75rem 0;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.name-and-link {
+    max-height: 7rem;
+}
+
+.active-card-summary {
+    font-size: 1rem;
+    background-color: #ddd;
+    color: #111;
 }
 
 .Link {
